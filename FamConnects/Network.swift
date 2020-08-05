@@ -17,6 +17,7 @@ enum URLServices {
     static let insertAncestors: String = "https://famconnect.web.illinois.edu/insert.php"
     static let updateAncestors: String = "https://famconnect.web.illinois.edu/update.php"
     static let deleteAncestors: String = "https://famconnect.web.illinois.edu/delete.php"
+    static let familyTree: String = "https://famconnect.web.illinois.edu/testAlgo.php"
 }
 
 class Network{
@@ -45,6 +46,14 @@ class Network{
     }
     
     func delete(parameters: [String: Any], url: String) -> URLRequest {
+        var request = URLRequest(url: URL(string: url)!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+        return request
+    }
+    
+    func familyTree(parameters: [String: Any], url: String) -> URLRequest {
         var request = URLRequest(url: URL(string: url)!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"

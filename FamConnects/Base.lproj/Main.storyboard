@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -115,47 +114,21 @@
         <!--Item 2-->
         <scene sceneID="Ddf-7e-67M">
             <objects>
-                <viewController id="MS6-dK-LUh" sceneMemberID="viewController">
+                <viewController id="MS6-dK-LUh" customClass="TreeViewController" customModule="FamConnects" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BbG-8f-o1s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rcF-R8-qoE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UnZ-NA-MZ2">
-                                    <size key="itemSize" width="217" height="212"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LGQ-5n-7Z6">
-                                        <rect key="frame" x="98.5" y="0.0" width="217" height="212"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6pR-G0-3z2">
-                                            <rect key="frame" x="0.0" y="0.0" width="217" height="212"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="217" height="212"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="rcF-R8-qoE" firstAttribute="top" secondItem="Ogg-rr-O9a" secondAttribute="top" id="FQU-Oa-iSl"/>
-                            <constraint firstItem="rcF-R8-qoE" firstAttribute="trailing" secondItem="Ogg-rr-O9a" secondAttribute="trailing" id="IgP-ii-y1n"/>
-                            <constraint firstItem="rcF-R8-qoE" firstAttribute="bottom" secondItem="Ogg-rr-O9a" secondAttribute="bottom" id="JeI-ea-UVk"/>
-                            <constraint firstItem="rcF-R8-qoE" firstAttribute="leading" secondItem="Ogg-rr-O9a" secondAttribute="leading" id="KLE-gs-hG1"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ogg-rr-O9a"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" image="person.3" catalog="system" id="rDj-0q-n9W"/>
+                    <connections>
+                        <outlet property="rootView" destination="BbG-8f-o1s" id="tAi-GY-TOo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wnC-rX-61H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644.92753623188412" y="772.76785714285711"/>
+            <point key="canvasLocation" x="755" y="823"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="DnO-RV-pfs">

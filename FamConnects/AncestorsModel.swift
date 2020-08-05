@@ -16,6 +16,21 @@ struct Ancestor: Decodable {
     var birthLikePlaceText: String?
 }
 
+//struct Tree: Decodable {
+//    var pid: Int
+//    var fullName: String?
+//    var sex: String?
+//    var birthLikeDate: Int
+//    var birthLikePlaceText: String?
+//    var children: [Int]
+//    var siblings: [Int]
+//    var spouses: [Int]
+//}
+
+struct Tree: Decodable {
+    var fullName: [String]
+}
+
 class AncestorsModel {
     
     weak var delegate: Downloadable?
@@ -52,6 +67,15 @@ class AncestorsModel {
         let request = networkModel.update(parameters: parameters, url: url)
         networkModel.response(request: request) { (data) in
             print(data)
+            return completion(true)
+        }
+    }
+    
+    func downloadTree(parameters: [String: Any], url: String, completion: @escaping(_ completed: Bool)->()) {
+        let request = networkModel.familyTree(parameters: parameters, url: url)
+        networkModel.response(request: request) { (data) in
+            let model = try! JSONDecoder().decode([Tree]?.self, from: data) as [Tree]?
+            self.delegate?.didReceiveData(data: model! as [Tree])
             return completion(true)
         }
     }

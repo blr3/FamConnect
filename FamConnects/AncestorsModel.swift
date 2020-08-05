@@ -9,10 +9,11 @@
 import Foundation
 
 struct Ancestor: Decodable {
-    var fullName: String
-    var sex: String
+    var pid: Int
+    var fullName: String?
+    var sex: String?
     var birthLikeDate: Int
-    var birthLikePlaceText: String
+    var birthLikePlaceText: String?
 }
 
 class AncestorsModel {
@@ -33,6 +34,18 @@ class AncestorsModel {
     }
     
     func insertAncestors(parameters: [String: Any], url: String, completion: @escaping(_ completed: Bool)->()) {
-        networkModel.insert(parameters: parameters, url: url)
+        let request = networkModel.insert(parameters: parameters, url: url)
+        networkModel.response(request: request) { (data) in
+            print(data)
+            return completion(true)
+        }
+    }
+    
+    func deleteAncestor(parameters: [String: Any], url: String, completion: @escaping(_ completed: Bool)->()) {
+        let request = networkModel.delete(parameters: parameters, url: url)
+        networkModel.response(request: request) { (data) in
+            print(data)
+            return completion(true)
+        }
     }
 }

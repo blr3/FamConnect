@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertViewController" customModule="FamConnects" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InsertTableViewCell" rowHeight="190" translatesAutoresizingMaskIntoConstraints="NO" id="KGk-i7-Jjw" customClass="InsertTableViewCell" customModule="FamConnects" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-sc-9uM" customClass="InsertTableViewCell" customModule="FamConnects" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ixn-3a-Fr8">
+                        <rect key="frame" x="16" y="14" width="288" height="165"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="y1b-2R-AAy">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9QT-bE-Ofb">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="138" id="iVF-Vp-BJy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Am-wu-gS0">
+                                        <rect key="frame" x="150" y="0.0" width="138" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Xkf-kn-wRr"/>
+                                            <constraint firstAttribute="width" constant="138" id="xVV-tF-EBh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7we-ub-Uf2">
+                                <rect key="frame" x="0.0" y="45" width="288" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birth Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0s-8n-x5a">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="138" id="Fa9-dn-W8B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GH8-cZ-FsF">
+                                        <rect key="frame" x="150" y="0.0" width="138" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="138" id="PAj-dZ-bh3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sex" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1B8-BA-z0l">
+                                <rect key="frame" x="75" y="90" width="138" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="MGa-SF-cGw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Yaf-jD-csq">
+                                <rect key="frame" x="0.0" y="135" width="288" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYH-mu-qAa">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="138" id="3NH-9L-hn9"/>
+                                        </constraints>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="update:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Huf-hn-xpx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXV-ua-0sa">
+                                        <rect key="frame" x="150" y="0.0" width="138" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0GB-FD-km1"/>
+                                            <constraint firstAttribute="width" constant="138" id="x8g-RS-0cH"/>
+                                        </constraints>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteEntry:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wHT-Dp-yTb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ixn-3a-Fr8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Jcy-dC-b9e"/>
+                    <constraint firstAttribute="bottom" secondItem="ixn-3a-Fr8" secondAttribute="bottom" constant="11" id="aQR-rO-JM8"/>
+                    <constraint firstAttribute="trailing" secondItem="ixn-3a-Fr8" secondAttribute="trailing" constant="16" id="btH-lC-dn8"/>
+                    <constraint firstItem="ixn-3a-Fr8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="cma-c1-UxE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstAttribute="height" constant="190" id="8Bj-w3-dwy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="birthDate" destination="w0s-8n-x5a" id="zhw-lZ-ZgZ"/>
+                <outlet property="firstName" destination="9QT-bE-Ofb" id="O4Y-qO-s0f"/>
+                <outlet property="lastName" destination="5Am-wu-gS0" id="LIh-iP-FqQ"/>
+                <outlet property="sex" destination="1B8-BA-z0l" id="8lU-wd-g7D"/>
+                <outlet property="state" destination="GH8-cZ-FsF" id="hJm-lL-iZ6"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="193.52678571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

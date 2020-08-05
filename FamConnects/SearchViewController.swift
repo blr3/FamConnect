@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
     @IBAction func search(_ sender: Any) {
         let param0 = ["first_name": self.firstName.text!, "last_name": self.lastName.text!, "birth_date": self.birthDate.text!, "birth_place": self.state.text!, "checkbox": String(self.checkToggle.isOn)] as [String : Any]
         
-        model.downloadAncestors(parameters: param0, url: URLServices.ancestors) { (res) in
+        model.downloadAncestors(parameters: param0, url: URLServices.getAncestors) { (res) in
             if (res) {
                 DispatchQueue.main.sync {
                     self.performSegue(withIdentifier: "resId", sender: self)

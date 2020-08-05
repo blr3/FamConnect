@@ -12,10 +12,17 @@ import UIKit
 class ResultsViewController: UITableViewController {
     
     var model: [Ancestor]?
+    var ancestors: [Ancestor] = []
+    var index: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     // MARK: - Table view data source
+    
+    @IBAction func addBtn(_ sender: Any) {
+//        ancestors.append(self.model[])
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

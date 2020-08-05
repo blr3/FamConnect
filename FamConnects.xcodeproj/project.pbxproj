@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C963B66524DA577F0087F43F /* 15347-illustration-of-a-tree-with-leaves-pv.png in Resources */ = {isa = PBXBuildFile; fileRef = C963B66424DA577E0087F43F /* 15347-illustration-of-a-tree-with-leaves-pv.png */; };
 		C9863E5A24D27E8500E81E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9863E5924D27E8500E81E57 /* AppDelegate.swift */; };
 		C9863E5C24D27E8500E81E57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9863E5B24D27E8500E81E57 /* SceneDelegate.swift */; };
 		C9863E5E24D27E8500E81E57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9863E5D24D27E8500E81E57 /* ViewController.swift */; };
@@ -19,11 +20,14 @@
 		C9863E7524D280CE00E81E57 /* AncestorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9863E7224D280CE00E81E57 /* AncestorsModel.swift */; };
 		C9863E7724D2A72500E81E57 /* 1288125478.png in Resources */ = {isa = PBXBuildFile; fileRef = C9863E7624D2A72400E81E57 /* 1288125478.png */; };
 		C9B88FA824D3477500BF423E /* InsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B88FA724D3477500BF423E /* InsertViewController.swift */; };
+		C9B88FAB24D8D3A300BF423E /* InsertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B88FA924D8D3A300BF423E /* InsertTableViewCell.swift */; };
+		C9B88FAC24D8D3A400BF423E /* InsertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B88FAA24D8D3A300BF423E /* InsertTableViewCell.xib */; };
 		C9BEA45224D324E70045BA77 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BEA45124D324E70045BA77 /* ResultsViewController.swift */; };
 		C9BEA45424D328930045BA77 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BEA45324D328930045BA77 /* ResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C963B66424DA577E0087F43F /* 15347-illustration-of-a-tree-with-leaves-pv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "15347-illustration-of-a-tree-with-leaves-pv.png"; sourceTree = "<group>"; };
 		C9863E5624D27E8500E81E57 /* FamConnects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamConnects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9863E5924D27E8500E81E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9863E5B24D27E8500E81E57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		C9863E7224D280CE00E81E57 /* AncestorsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncestorsModel.swift; sourceTree = "<group>"; };
 		C9863E7624D2A72400E81E57 /* 1288125478.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1288125478.png; sourceTree = "<group>"; };
 		C9B88FA724D3477500BF423E /* InsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertViewController.swift; sourceTree = "<group>"; };
+		C9B88FA924D8D3A300BF423E /* InsertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertTableViewCell.swift; sourceTree = "<group>"; };
+		C9B88FAA24D8D3A300BF423E /* InsertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertTableViewCell.xib; sourceTree = "<group>"; };
 		C9BEA45124D324E70045BA77 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		C9BEA45324D328930045BA77 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +78,7 @@
 		C9863E5824D27E8500E81E57 /* FamConnects */ = {
 			isa = PBXGroup;
 			children = (
+				C963B66424DA577E0087F43F /* 15347-illustration-of-a-tree-with-leaves-pv.png */,
 				C9863E7624D2A72400E81E57 /* 1288125478.png */,
 				C9863E7224D280CE00E81E57 /* AncestorsModel.swift */,
 				C9863E7024D280CD00E81E57 /* Network.swift */,
@@ -87,6 +94,8 @@
 				C9BEA45324D328930045BA77 /* ResultCell.swift */,
 				C9BEA45124D324E70045BA77 /* ResultsViewController.swift */,
 				C9B88FA724D3477500BF423E /* InsertViewController.swift */,
+				C9B88FA924D8D3A300BF423E /* InsertTableViewCell.swift */,
+				C9B88FAA24D8D3A300BF423E /* InsertTableViewCell.xib */,
 			);
 			path = FamConnects;
 			sourceTree = "<group>";
@@ -150,9 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9863E6924D27E8D00E81E57 /* LaunchScreen.storyboard in Resources */,
+				C9B88FAC24D8D3A400BF423E /* InsertTableViewCell.xib in Resources */,
 				C9863E6624D27E8D00E81E57 /* Assets.xcassets in Resources */,
 				C9863E6124D27E8500E81E57 /* Main.storyboard in Resources */,
 				C9863E7724D2A72500E81E57 /* 1288125478.png in Resources */,
+				C963B66524DA577F0087F43F /* 15347-illustration-of-a-tree-with-leaves-pv.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9863E7524D280CE00E81E57 /* AncestorsModel.swift in Sources */,
+				C9B88FAB24D8D3A300BF423E /* InsertTableViewCell.swift in Sources */,
 				C9863E7424D280CE00E81E57 /* SearchViewController.swift in Sources */,
 				C9863E7324D280CE00E81E57 /* Network.swift in Sources */,
 				C9B88FA824D3477500BF423E /* InsertViewController.swift in Sources */,

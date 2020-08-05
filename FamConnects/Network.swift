@@ -14,7 +14,10 @@ protocol Downloadable: class {
 
 enum URLServices {
     // change to your PHP script in your own server.
-    static let ancestors: String = "https://famconnect.web.illinois.edu/service2.php"
+    static let getAncestors: String = "https://famconnect.web.illinois.edu/service2.php"
+    static let insertAncestors: String = "https://famconnect.web.illinois.edu/insert.php"
+    static let updateAncestors: String = "https://famconnect.web.illinois.edu/update.php"
+    static let deleteAncestors: String = "https://famconnect.web.illinois.edu/delete.php"
 }
 
 class Network{
@@ -28,6 +31,24 @@ class Network{
     }
     
     func insert(parameters: [String: Any], url: String) -> URLRequest {
+        var request = URLRequest(url: URL(string: url)!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+        return request
+    }
+    
+    func update(parameters: [String: Any], url: String) -> URLRequest {
+        var request = URLRequest(url: URL(string: url)!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        request.httpBody = parameters.percentEscaped().data(using: .utf8)
+        return request
+    }
+    
+    func delete(parameters: [String: Any], url: String) -> URLRequest {
         var request = URLRequest(url: URL(string: url)!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"

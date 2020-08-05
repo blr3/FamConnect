@@ -17,24 +17,23 @@ class InsertTableViewCell: UITableViewCell {
     var id: Int!
     
     let model = AncestorsModel()
+    var delegate:RefreshDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     @IBAction func update(_ sender: Any) {
-        let param = ["first_name": self.firstName.text!, "last_name": self.lastName.text!, "birth_year": self.birthDate.text!, "birth_place": self.state.text!] as [String : Any]
+        let param = ["first_name": self.firstName.text!, "last_name": self.lastName.text!, "birth_year": self.birthDate.text!, "birth_place": self.state.text!, "id": id!] as [String : Any]
         
-        model.insertAncestors(parameters: param, url: URLServices.insertAncestors) { (res) in
+        model.updateAncestor(parameters: param, url: URLServices.updateAncestors) { (res) in
             if (res) {
                 print("updated ancestor")
+                self.delegate?.refresh()
             }
         }
     }
@@ -43,7 +42,10 @@ class InsertTableViewCell: UITableViewCell {
         let param = ["id": id!] as [String : Any]
         
         model.deleteAncestor(parameters: param, url: URLServices.deleteAncestors) { (result) in
-            print(result)
+            if (result) {
+                print(result)
+                self.delegate?.refresh()
+            }
         }
     }
 }

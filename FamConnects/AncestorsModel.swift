@@ -24,8 +24,7 @@ class AncestorsModel {
     func downloadAncestors(parameters: [String: Any], url: String, completion: @escaping(_ completed: Bool)->()) {
         let request = networkModel.request(parameters: parameters, url: url)
         networkModel.response(request: request) { (data) in
-            let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-            print(json)
+//            let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
             let model = try! JSONDecoder().decode([Ancestor]?.self, from: data) as [Ancestor]?
             self.delegate?.didReceiveData(data: model! as [Ancestor])
             return completion(true)
@@ -43,6 +42,14 @@ class AncestorsModel {
     
     func deleteAncestor(parameters: [String: Any], url: String, completion: @escaping(_ completed: Bool)->()) {
         let request = networkModel.delete(parameters: parameters, url: url)
+        networkModel.response(request: request) { (data) in
+            print(data)
+            return completion(true)
+        }
+    }
+    
+    func updateAncestor(parameters: [String: Any], url: String, completion: @escaping(_ completed: Bool)->()) {
+        let request = networkModel.update(parameters: parameters, url: url)
         networkModel.response(request: request) { (data) in
             print(data)
             return completion(true)

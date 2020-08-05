@@ -13,7 +13,6 @@ protocol Downloadable: class {
 }
 
 enum URLServices {
-    // change to your PHP script in your own server.
     static let getAncestors: String = "https://famconnect.web.illinois.edu/service2.php"
     static let insertAncestors: String = "https://famconnect.web.illinois.edu/insert.php"
     static let updateAncestors: String = "https://famconnect.web.illinois.edu/update.php"
@@ -25,7 +24,6 @@ class Network{
         var request = URLRequest(url: URL(string: url)!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
         return request
     }
@@ -34,7 +32,6 @@ class Network{
         var request = URLRequest(url: URL(string: url)!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
         return request
     }
@@ -43,7 +40,6 @@ class Network{
         var request = URLRequest(url: URL(string: url)!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
         return request
     }
@@ -52,7 +48,6 @@ class Network{
         var request = URLRequest(url: URL(string: url)!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        
         request.httpBody = parameters.percentEscaped().data(using: .utf8)
         return request
     }
@@ -92,7 +87,6 @@ extension CharacterSet {
     static let urlQueryValueAllowed: CharacterSet = {
         let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
         let subDelimitersToEncode = "!$&'()*+,;="
-        
         var allowed = CharacterSet.urlQueryAllowed
         allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
         return allowed

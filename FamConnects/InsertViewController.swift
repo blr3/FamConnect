@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RefreshDelegate {
+    func refresh() 
+}
+
 class InsertViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var firstName: UITextField!
@@ -19,15 +23,17 @@ class InsertViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let model = AncestorsModel()
     var added = [Ancestor]()
+    var ids = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let nib = UINib(nibName: "InsertTableViewCell", bundle: Bundle(for: type(of: self)))
-//        tableView.register(nib, forCellReuseIdentifier: "InsertTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         model.delegate = self
-        
+        refresh()
+    }
+    
+    func refresh() {
         let param = ["first_name": "", "last_name": "", "birth_year": "", "birth_place": ""] as [String : Any]
         
         self.model.downloadAncestors(parameters: param, url: URLServices.getAncestors) { (res) in
@@ -41,16 +47,13 @@ class InsertViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBAction func addPerson(_ sender: Any) {
         let param = ["first_name": self.firstName.text!, "last_name": self.lastName.text!, "birth_year": self.birthDate.text!, "birth_place": self.state.text!] as [String : Any]
-        
-//        DispatchQueue.main.async {
-            self.model.insertAncestors(parameters: param, url: URLServices.insertAncestors) { (res) in
-                if (res) {
-                    print("inserted ancestor")
-                    // add the new person to the database and also to the relationship
-//                    self.tableView.reloadData()
-                }
+
+        self.model.insertAncestors(parameters: param, url: URLServices.insertAncestors) { (res) in
+            if (res) {
+                print("inserted ancestor")
+                self.refresh()
             }
-//        }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,11 +65,10 @@ class InsertViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // make sure query searches for entries that are not empty strings in this category or null
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! InsertTableViewCell
-
-        cell.firstName.text = self.added[indexPath.row].fullName
-        // we should split full name into first and last name
+        let components = self.added[indexPath.row].fullName?.split{ $0 == " " }
+        cell.firstName.text = String(components?[0] ?? "")
+        cell.lastName.text = String(components?[1] ?? "")
         cell.sex.text = self.added[indexPath.row].sex
         cell.birthDate.text = String(self.added[indexPath.row].birthLikeDate)
         cell.state.text = self.added[indexPath.row].birthLikePlaceText
@@ -76,14 +78,14 @@ class InsertViewController: UIViewController, UITableViewDelegate, UITableViewDa
 }
 
 extension InsertViewController: Downloadable {
-    // implements our Downloadable protocol
     func didReceiveData(data: Any) {
        DispatchQueue.main.sync {
             let temp = (data as! [Ancestor])
-        
+    
             for ancestor in temp {
-                if ancestor.pid > 200 {
+                if ancestor.pid > 200 && !ids.contains(ancestor.pid) {
                     added.append(ancestor)
+                    ids.append(ancestor.pid)
                 }
             }
         }

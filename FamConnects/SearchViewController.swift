@@ -14,7 +14,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var birthDate: UITextField!
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var checkToggle: UISwitch!
-    @IBOutlet weak var check: UISegmentedControl!
     
     var modeldata: [Ancestor]?
     let model = AncestorsModel()
@@ -34,27 +33,20 @@ class SearchViewController: UIViewController {
                 }
             }
         }
-        
     }
-//
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resId" {
             let result = segue.destination as! ResultsViewController
             result.model = modeldata
         }
     }
-    
 }
 
 extension SearchViewController: Downloadable {
-    // implements our Downloadable protocol
     func didReceiveData(data: Any) {
        DispatchQueue.main.sync {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let results = storyboard.instantiateViewController(withIdentifier: "resultsID") as! ResultsViewController
             modeldata = (data as! [Ancestor])
-//            self.present(results, animated: true, completion: nil)
         }
     }
 }
